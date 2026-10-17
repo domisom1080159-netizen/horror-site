@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>電子學第一次解答</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f6f8fc;
+  color: #202124;
+  font-family: Arial, sans-serif;
+}
+header {
+  background: white;
+  padding: 20px 28px;
+  font-size: 22px;
+  border-bottom: 1px solid #ddd;
+}
+main {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.filename {
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.info {
+  color: #666;
+  margin-bottom: 25px;
+}
+.player {
+  background: #17191f;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+button {
+  background: #8ab4f8;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+video {
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<header>☁ 我的雲端檔案</header>
+
+<main>
+  <div class="filename">
+    電子學第一次解答.mp4
+  </div>
+
+  <div class="info">
+    影片檔案 · MP4
+  </div>
+
+  <div class="player">
+    <div id="preview">
+      <h2>🎬 電子學第一次解答.mp4</h2>
+      <button id="start">
+        ▶ 播放恐怖影片
+      </button>
+    </div>
+
+    <video id="video" controls playsinline
+           style="display:none">
+      <source src="horror.mp4" type="video/mp4">
+      瀏覽器不支援影片播放。
+    </video>
+  </div>
+</main>
+
+<script>
+const button = document.getElementById("start");
+const preview = document.getElementById("preview");
+const video = document.getElementById("video");
+
+button.addEventListener("click", () => {
+  preview.style.display = "none";
+  video.style.display = "block";
+  video.play();
+});
+</script>
+
+</body>
+</html>
